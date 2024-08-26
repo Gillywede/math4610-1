@@ -10,7 +10,6 @@
 | :--------------- |---| ---------------------------: |
 | Office Location: |   |  ANSC 222C                   |
 | Office Hours:    |   |  MWF 10:30am-11:20am         |
-|                  |   |  MWF 12:30am-2:00pm          |
 | Phone:           |   |  1-435-797-2825              |
 | email:           |   |  [joe.koebbe@usu.edu](joe.koebbe@usu.edu)        |
 | github:          |   |  [https://jvkoebbe.github.com](https://jvkoebbe.github.com) |
