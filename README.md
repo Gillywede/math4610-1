@@ -1,3 +1,5 @@
 # math4610
 
-This is a place holder for Math 4610 student work.
+The links below will get you to the syllabus for the course and modules to work through.
+
+* [Math 4610 Syllabus](./syllabus/syllabus.md)
