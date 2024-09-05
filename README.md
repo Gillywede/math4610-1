@@ -10,4 +10,4 @@ The links below will get you to the syllabus for the course and modules to work 
 
 * [Module - Virtualization and Virtual Machines](./modules/module_01/content/content_01.md)
   
-* [Module - Matrix Multiplication Efficiecy](./modules/module_02/content/content_02.md)
+* [Module - Matrix Multiplication Efficiecy](./modules/module_02/content/content_02.html)
