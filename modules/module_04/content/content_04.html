@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>content_04.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="a-small-module-on-creating-graphics">A Small Module on Creating Graphics</h1>
+<p>It is important to be able to visualize simulation
+results in many areas of engineering, science,
+economics and so on. In this module we will take on
+a problem with the goal of visualizing the output
+from our population density models from the previous
+module. In the module three separate models were
+defined.</p>
+<p>The first was the Malthusian model that resulted
+in an exponential function for an exact solution.
+The second model was the logistic model that results
+in a rational function of exponential terms. The
+third model does not have an analytic solution. So,
+we need to be satisfied with an approximate solution.</p>
+<p>In using these models, both the Logistic model and
+the logarithmic model have equilibrium solutions.
+The important of these are the carrying capacities
+for each of the population density models. Since the
+logarithmic model does not have an exact closed form
+solution, the best we can do is to compare the
+logarithmic model to the logistic model and compare
+the behavior near the equilibrium solutions.</p>
+<p>We will use graphical comparisons. The easiest tool
+for this is to <strong>import</strong> the <strong>matplotlib</strong> packages
+written for use with <strong>python</strong> programs.</p>
+<h2 id="some-data-for-the-module">Some Data for the Module</h2>
+<p>In the last module we considered the approximation of
+solutions of population density models. The differential
+equations used were approximated by finite difference
+equations when the derivative was replaed by the difference
+as follows:
+$$
+\frac{dP}{dt} \approx \frac{P(t+\Delta t)-P(t)}{\Delta t}
+$$
+This was used to develop formulas for computing the
+several different approximations. Our interest was in the
+logarithmic model and how the approximation compared with
+the logistic model.</p>
+<p>The finite difference equation that resulted was
+$$
+P(t+\Delta t) \approx P(t) + \alpha\ P(t)
+- \gamma\ \Delta t\ P(t) ln(P(t))
+$$
+which suggests the discrete sequence of approximations
+determined by
+$$
+P_{k+1} = ( 1 + \alpha\ \Delta t ) P_k
+- \gamma\ \Delta t\ P_k\ \ln(P_k)
+$$
+A basic code for implementing the algorithm above can
+be viewed at the following link:</p>
+<p><a href="../src/logarithm.py">Basic Code for the Logarithmic Model</a></p>
+<p>This should provide a simple starting point. The output
+from the code is a graph shown in the next figiure.</p>
+<p><img src="../images/logarithm_sim.png" alt="Simulation Results from Logarithm Model"></p>
+<h2 id="graphing-one-data-set">Graphing One Data Set</h2>
+<p>Graphing a single data set is not too difficult. As seen
+in the code in the previous section, you need only do an
+import of matplotlib and add two plotting commands that
+are a part of the matplotlib package.</p>
+<p><strong>Note:</strong> The graph shown is a very simple plot. There
+are no labels, legends, or other identifying that could
+be added to the graphical interpretation of the
+simulations.</p>
+<h2 id="graphing-multiple-data-sets">Graphing Multiple Data Sets</h2>
+<p>Another thing we could try is to graph the approximate
+solutions on the same figure. In this case,  we would
+need to be careful to annotate the graphs with the
+particular approximation. This means labeling the graph
+and putting a <strong>legend</strong> in the figure for clarity.</p>
+<h3 id="an-example">An Example</h3>
+<p>The commands that are needed in order to annotate the
+graph are contained in the link below.</p>
+<p><a href="../src/carrying_test.py">Code to Graph Multiple Approximations</a></p>
+<p>The graph generated by the code is shown in the following
+figure.</p>
+<p><img src="../images/carrying_comp.png" alt="The Result"></p>
+<p>The graph may need to be resized. This is an issue that
+can be resolved before saving the figure. Below is a
+screen capture of the window that pops up when the
+code is executed. The window has a <strong>tool bar</strong>* at the
+bottom that can be used to resize and a few other
+tricks.</p>
+<p><img src="../images/screen_popup.png" alt="Screen Popup for Matplotlib"></p>
+<p><strong>Note</strong> In the graph shown the labels of the axes are cut
+off. By resizing the graph, the labels will show up again.
+You can use the tool bar to increase the size of the figure
+by just resizing the window.</p>
+<p><strong>Note</strong> The graph has a problem. When one looks at the
+curve for the logistic model, the approximation via a
+logistic model crosses the carrying capacity and then
+comes back down. This is not allowed in the differential
+equation. The simulation likely needs to be done with a
+smaller step, $dt$.</p>
+<p><strong>Note</strong> It also appears that the logarithmic model seems
+to do a better job approximating the expected behaviour
+of not crossing an equilibrium solution. It would be
+a good idea to compare the solutions in more cases
+before continuing on.</p>
+<h2 id="animation-of-a-single-data-set">Animation of A Single Data Set</h2>
+<p>Under Construction</p>
+<h2 id="animation-of-multiple-data-sets">Animation of Multiple Data Sets</h2>
+<p>Results will appear later.</p>
+<h2 id="comparison-of-logistic-and-logarithmic-models">Comparison of Logistic and Logarithmic Models</h2>
+<p>This is really comparing apples and oranges in some sense.
+We really cannot compare the solutions since the logarithmic
+model does not have a readily available exact solution.
+However, we can compare the approximate solutions in the
+case when the carrying capacities are the same.</p>
+<p>We can find the carrying capacities by looking for nonzero
+equilibrium solutions for the model. These turn out to occur
+when
+$$
+\frac{dP}{dt} = 0
+$$
+We do not need to consider the zero solutions since there
+really is no information that comes along with these two
+cases. Zero solutions are typically associated with unstable
+equilibria and for these models this is the cases.</p>
+<h3 id="graphing-the-comparison">Graphing the Comparison</h3>
+<p>For the logistic equation the carrying capacity comes from
+$$
+0=\alpha - \beta\ P \ \rightarrow\ P = \frac{\alpha}{\beta}
+$$
+and for the logarithmic model we will use the same idea
+to create the equation
+$$
+0=\alpha-\gamma\ \ln(P)\rightarrow P=e^{\frac{\alpha}{\gamma}}
+$$
+To obtain a match we can just set these values equal to
+each other. That is,
+$$
+e^{\frac{\alpha}{\gamma}} = \frac{\alpha}{\beta}
+$$
+We will assume the growth rate parameter, $\alpha&gt;0$, is the
+same for both models.</p>
+<p>The assumptions give relationships between the parameters,
+$\beta$ and $\gamma$ as follows.
+$$
+\gamma = \frac{\alpha}{\ln(\alpha)-\ln(\beta)}
+$$
+and
+$$
+\beta = \alpha\ e^{-\frac{\alpha}{\gamma}}
+$$
+If the two models have the same carrying capacity the
+solutions must eventually approach the same result as
+$t$, the time, gets large enough.</p>
+<p><strong>Note:</strong> It is typical to assume that $\alpha&gt;\beta$
+in the logistic model which also implies that $\gamma&gt;0$
+in the first relationship above. If there is a large
+difference between $\alpha$ and $\beta$ in the logistic
+model, $\gamma$, may be very small.</p>
+<h3 id="one-example-using-the-carrying-capacity">One Example Using the Carrying Capacity</h3>
+<p>Let's define an example that illustrates the difference
+between the logistic and logarithmic models. Set $\alpha=0.2$
+and $\beta=0.003$. This implies $\gamma\approx 0.047622392$.</p>
+<p>The graphcs of the two models are shown in the next figure.</p>
+<p><img src="../images/logistic_comp.png" alt="Carrying Capacity Comparison"></p>
+<hr>
+<h2 id="the-main-question-for-math-4610-at-usu">The Main Question for Math 4610 at USU</h2>
+<hr>
+<p>The main task in this module is to produce graphics
+that can be used to describe what is going on with
+the simulations of population density that were
+developed in the previous module.</p>
+<ul>
+<li>Use Matplotlib to graph the individual approximations
+for the density models. This includes:
+<ul>
+<li>Malthus Model approximation using explicit Euler.</li>
+<li>Malthus model approximation using implicit Euler.</li>
+<li>Logistic model approximation using explicit Euler.</li>
+<li>Logistic model approximation using implicit Euler.</li>
+<li>Logarithmic model approximation using explicit Euler.</li>
+<li>Logarithmic model approximation using predictor
+corrector defined in class.</li>
+</ul>
+</li>
+<li>Graph the results from the logarithm and logistic
+models with the explicit schemes used for the
+approximate results.</li>
+<li>Graph result from the the logistic and logarithmic
+approximations where the implicit Euler method is
+used on the logistic model and the predictor
+corrector method applied to the logarithm model.</li>
+</ul>
+<p>Use the following parameters. You will need to compute
+$\gamma$ from $\alpha$ and $\beta$.
+$$
+\alpha = 0.593, \ \ \ \ \beta = 0.001086
+$$
+Show your calculations.</p>
+
+</body>
+</html>
