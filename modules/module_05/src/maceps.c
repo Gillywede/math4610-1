@@ -6,5 +6,18 @@
 
 int main()
 {
-  printf("hello");
+  float one;
+  float approx_one;
+  float eps;
+  float error;
+
+  one = 1.0;
+  eps = 0.5;
+  approx_one = one + eps;
+  float diff = approx_one - one;
+  error = 
+
+  while(error > 0) 
+
+  
 }
