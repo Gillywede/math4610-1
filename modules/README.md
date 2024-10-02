@@ -4,3 +4,4 @@
 * [Module 02](./module_02/content/content_02.md)
 * [Module 03](./module_03/content/content_03.pdf)
 * [Module 04](./module_04/content/content_04.pdf)
+* [Module 05](./module_05/content/content_05.pdf)
